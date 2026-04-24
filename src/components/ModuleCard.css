@@ -1,0 +1,125 @@
+.module-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  height: 100%;
+  min-height: 200px;
+}
+
+.module-card.disabled {
+  cursor: not-allowed;
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+.module-card.disabled:hover {
+  transform: none;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.module-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1;
+}
+
+.module-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  transition: transform var(--transition-slow);
+}
+
+.module-card:not(.disabled):hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.25);
+}
+
+.module-card:not(.disabled):hover .module-card-bg {
+  transform: scale(1.05);
+}
+
+.module-card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.module-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(4px);
+}
+
+.module-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.module-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.module-action {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 99px;
+  align-self: flex-start;
+  transition: background var(--transition-fast);
+}
+
+.module-card:not(.disabled):hover .module-action {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Gradients */
+.bg-gradient-classroom {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+.bg-gradient-hiresphere {
+  background: linear-gradient(135deg, #0d9488 0%, #059669 100%);
+}
+
+.bg-gradient-codestate {
+  background: linear-gradient(135deg, #475569 0%, #334155 100%);
+}
