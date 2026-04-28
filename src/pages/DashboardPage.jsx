@@ -144,6 +144,14 @@ const DashboardPage = () => {
             url={quickLinks?.hireSphereUrl}
             delay={0.5}
           />
+          <ModuleCard 
+            title="CodeStage"
+            description="Practice coding, compete in contests, and sharpen your programming skills."
+            icon="💻"
+            type="codestate"
+            url={quickLinks?.codeStageUrl}
+            delay={0.6}
+          />
         </div>
       </section>
     </div>
